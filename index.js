@@ -7,7 +7,6 @@ const app = express();
 const PORT = process.env.PORT;
 const API_BASE_URL = process.env.API_BASE_URL;
 
-
 async function getListing(user) {
   
   let interest = user?.interests[0]
@@ -51,8 +50,6 @@ async function getListing(user) {
     console.log(error);
   }
 }
-
-
 
 async function getUserData() {
     const getURL = `${API_BASE_URL}/interest-data`;
