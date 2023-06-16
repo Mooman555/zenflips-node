@@ -58,7 +58,6 @@ async function getUserData() {
       })
       .catch(error => {
         console.error('GET Error:', error);
-        // Handle any errors that occurred during the GET request
       });
         return usersArray;
 }
@@ -84,8 +83,6 @@ async function getImages(pageLink) {
     console.log(error);
   }
 }
-
-
 
 async function sendScrapeData (){
   let getData;
