@@ -1,4 +1,5 @@
 # Dependency directories
+/node_modules
 
 # Build output
 /dist
@@ -16,6 +17,7 @@ logs/
 *.log
 
 # Dependency lock files
+package-lock.json
 yarn.lock
 
 # OS and editor temporary files
