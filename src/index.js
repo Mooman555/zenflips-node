@@ -94,13 +94,13 @@ async function sendScrapeData (){
       getData =  await getListing(user);
       console.log(getData,"getData")
       const postScrapeDataUrl = `${API_BASE_URL}/scrapped-data`;
-    // axios.post(postScrapeDataUrl,{email:user?.email,body:JSON.stringify(getData)})
-    //     .then(response => {
-    //        console.log('Response:', response);
-    //     })
-    //     .catch(error => {
-    //        console.error('Error:', error);
-    //    });
+    axios.post(postScrapeDataUrl,{email:user?.email,body:JSON.stringify(getData)})
+        .then(response => {
+           console.log('Response:', response);
+        })
+        .catch(error => {
+           console.error('Error:', error);
+       });
      })
 }
 
