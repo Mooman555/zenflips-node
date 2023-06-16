@@ -98,9 +98,10 @@ async function sendScrapeData (){
 
 
 app.get('/', async (req, res) => {
-  await sendScrapeData()
   res.send('Scrapping is Running!!');
 });
+
+sendScrapeData()
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
