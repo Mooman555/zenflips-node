@@ -13,14 +13,9 @@ async function getListing(user) {
   const url = `https://orlando.craigslist.org/search/sss?condition=10&max_price=${interest?.max_price}&min_price=${interest?.min_price}&query=${interest?.keywords}&search_distance=${interest?.radius}#search=1~gallery~0~0`;
   try {
     const browser = await puppeteer.launch({ 
-      headless: 'new',
-      args: [
-        "--disable-setuid-sandbox",
-        "--no-sandbox",
-        "--single-process",
-        "--no-zygote",
-      ],
-      executablePath: '/usr/bin/chromium-browser'
+      executablePath: "/usr/bin/chromium-browser",
+      headless: true,
+      args: ["--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu"],
     });
     const page = await browser.newPage();
     await page.goto(url);
@@ -67,14 +62,9 @@ async function getImages(pageLink) {
   
   try {
     const browser = await puppeteer.launch({
-       headless: 'new',
-       args: [
-        "--disable-setuid-sandbox",
-        "--no-sandbox",
-        "--single-process",
-        "--no-zygote",
-      ],
-      executablePath: '/usr/bin/chromium-browser'
+      executablePath: "/usr/bin/chromium-browser",
+      headless: true,
+      args: ["--disable-dev-shm-usage", "--no-sandbox", "--disable-gpu"],
       });
     const page = await browser.newPage();
     await page.goto(pageLink);
