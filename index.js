@@ -13,7 +13,19 @@ async function getListing(user) {
   let interest = user?.interests[0]
   const url = `https://orlando.craigslist.org/search/sss?condition=10&max_price=${interest?.max_price}&min_price=${interest?.min_price}&query=${interest?.keywords}&search_distance=${interest?.radius}#search=1~gallery~0~0`;
   try {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ 
+      headless: 'new',
+      args: [
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote",
+      ],
+      executablePath:
+        process.env.NODE_ENV === "production"
+          ? process.env.PUPPETEER_EXECUTABLE_PATH
+          : puppeteer.executablePath(), 
+    });
     const page = await browser.newPage();
     await page.goto(url);
     const scrapeData = [];
@@ -60,7 +72,19 @@ async function getUserData() {
 async function getImages(pageLink) {
   
   try {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({
+       headless: 'new',
+       args: [
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote",
+      ],
+      executablePath:
+        process.env.NODE_ENV === "production"
+          ? process.env.PUPPETEER_EXECUTABLE_PATH
+          : puppeteer.executablePath(),
+      });
     const page = await browser.newPage();
     await page.goto(pageLink);
     let scrapeImage ;
