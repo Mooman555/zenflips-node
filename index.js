@@ -20,7 +20,7 @@ async function getListing(user) {
         "--single-process",
         "--no-zygote",
       ],
-      executablePath: 'google-chrome-stable'
+      executablePath: '/usr/bin/chromium-browser'
     });
     const page = await browser.newPage();
     await page.goto(url);
@@ -74,7 +74,7 @@ async function getImages(pageLink) {
         "--single-process",
         "--no-zygote",
       ],
-      executablePath: 'google-chrome-stable'
+      executablePath: '/usr/bin/chromium-browser'
       });
     const page = await browser.newPage();
     await page.goto(pageLink);
