@@ -17,11 +17,6 @@ async function getListing(user) {
     const page = await browser.newPage();
     await page.goto(url);
     const scrapeData = [];
-
-    // const htmlContent = await page.content();
-    // console.log(htmlContent,"content")
-    // const $ = cheerio.load(htmlContent);
-
     const searchResults = await page.$$('.cl-search-result');
     for (const result of searchResults) {
       const galleryCard = await result.$('div.gallery-card');
