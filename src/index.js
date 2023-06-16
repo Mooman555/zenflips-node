@@ -109,31 +109,3 @@ sendScrapeData()
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-        // const isSwipeAble = await galleryCard.$('div.cl-gallery > div.gallery-inner > a > div.swipe');
-        // var imgSrc;
-        // // console.log(isSwipeAble, "isSwipeAble")
-        // if (isSwipeAble) {
-        //   const isFirst = await galleryCard.$('div.cl-gallery > div.gallery-inner > a > div.swipe > div.swipe-wrap > div:nth-child(1) > img');
-        //   if (isFirst) {
-        //     imgSrc = await galleryCard.$eval('div.cl-gallery > div.gallery-inner > a > div.swipe > div.swipe-wrap > div:nth-child(1) > img', element => element?.src);
-        //     console.log(imgSrc, "isFirst if")
-        //   } else {
-        //     const thirdChildImg = await galleryCard.$('div.cl-gallery > div.gallery-inner > a > div.swipe > div.swipe-wrap > div:nth-child(3) > img');
-        //     if (thirdChildImg) {
-        //       imgSrc = await galleryCard.$eval('div.cl-gallery > div.gallery-inner > a > div.swipe > div.swipe-wrap > div:nth-child(3) > img', element => element.src);
-        //       console.log(imgSrc, "isFirst else")
-        //     } else {
-        //       imgSrc = await galleryCard.$eval('div.cl-gallery > div.gallery-inner > a > img', element => element.src);
-        //       console.log(imgSrc, "isFirst else - fallback")
-        //     }
-        //   }
-        // } else {
-        //   const imgElement = await galleryCard.$('div.cl-gallery > div.gallery-inner > a > img');
-        //   if (imgElement) {
-        //     imgSrc = await galleryCard.$eval('div.cl-gallery > div.gallery-inner > a > img', element => element.src);
-        //     // console.log(imgSrc, "else")
-        //   } else {
-        //     console.log('Image not found');
-        //   }
-        // }
