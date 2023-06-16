@@ -20,10 +20,7 @@ async function getListing(user) {
         "--single-process",
         "--no-zygote",
       ],
-      executablePath:
-        process.env.NODE_ENV === "production"
-          ? process.env.PUPPETEER_EXECUTABLE_PATH
-          : puppeteer.executablePath(), 
+      executablePath: 'google-chrome-stable'
     });
     const page = await browser.newPage();
     await page.goto(url);
@@ -77,10 +74,7 @@ async function getImages(pageLink) {
         "--single-process",
         "--no-zygote",
       ],
-      executablePath:
-        process.env.NODE_ENV === "production"
-          ? process.env.PUPPETEER_EXECUTABLE_PATH
-          : puppeteer.executablePath(),
+      executablePath: 'google-chrome-stable'
       });
     const page = await browser.newPage();
     await page.goto(pageLink);
